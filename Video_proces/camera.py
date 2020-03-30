@@ -39,7 +39,7 @@ class Camera(BaseCamera):
     def frames():
 
         while True:
-            time.sleep(1)  # 定时刷新
+            time.sleep(0.0001)  # 定时刷新
             imgs = open('D:/PycharmProjects/A05-lsu-j182_Hat_view/Video_proces/templates/imgs/1.jpg', 'rb')
             image = imgs.read()
 

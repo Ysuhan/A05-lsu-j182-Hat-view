@@ -30,19 +30,19 @@ class Camera(BaseCamera):
         while True:
             # read current frame
             _, img = camera.read()
-            cv2.imwrite(path + 'img/1.jpg', img)
-            image = Image.open(path + 'img/1.jpg')
-            print("image", type(image))
+            # cv2.imwrite(path + 'img/1.jpg', img)
+            # image = Image.open(path + 'img/1.jpg')
+            # print("image", type(image))
             # image = Image.fromarray()
             # img1 = cv2.imencode('.jpg', img)[1].tobytes()
             # # frame = cv2.flip(img, 1)  # 读取每一帧的图片
             # # print(frame)
-            r_image = yolo.detect_image(image)
-            print("r_image", type(r_image))
-
-            r_image.save(path + 'imgs/1.jpg')
-            r_image = Image.open(path + 'imgs/1.jpg')
+            # r_image = yolo.detect_image(image)
+            # print("r_image", type(r_image))
+            #
+            # r_image.save(path + 'imgs/1.jpg')
+            # r_image = Image.open(path + 'imgs/1.jpg')
             # img1 = cv2.imencode('.jpg', r_image).tobytes()
             # encode as a jpeg image and return it
-            # yield img1
-            yield r_image.read()
+            yield cv2.imencode('.jpg', img)[1].tobytes()
+            # yield r_image.read()
